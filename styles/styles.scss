@@ -32,3 +32,11 @@ input {
 .hide {
   display: none !important;
 }
+
+.container {
+  margin: 4rem auto;
+  width: 500px;
+  max-width: 90%;
+  background: aqua;
+  height: 600px;
+}

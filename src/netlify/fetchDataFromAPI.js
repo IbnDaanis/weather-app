@@ -1,12 +1,14 @@
-import fetch from 'node-fetch'
-import { searchQuery } from '../scripts/app'
+const fetch = require('node-fetch')
+require('dotenv').config()
+
 const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${process.env.API_KEY}`
 
-exports.handler = async function () {
+exports.handler = async function (event, context, callback) {
   let apiData
   try {
-    const city = 'London'
-    const data = await fetch(API_ENDPOINT)
+    const data = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${event.queryStringParameters.searchQuery}&appid=${process.env.API_KEY}`
+    )
     const response = await data.json()
     apiData = response
   } catch (err) {

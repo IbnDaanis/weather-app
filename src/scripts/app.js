@@ -2,7 +2,7 @@ const getDataFromAPI = async searchQuery => {
   try {
     const apiURL =
       process.env.PRODUCTION === 'true'
-        ? process.env.PRODUCTION_API
+        ? `/.netlify/functions/fetchDataFromAPI&searchQuery=${searchQuery}`
         : `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${process.env.API_KEY}`
     const fetchData = await fetch(apiURL)
     const response = await fetchData.json()

@@ -4,9 +4,11 @@ require('dotenv').config()
 const API_ENDPOINT = process.env.API_URL
 
 exports.handler = async function () {
-  let response
+  let apiData
   try {
-    response = await fetch(API_ENDPOINT)
+    const data = await fetch(API_ENDPOINT)
+    const response = await data.json()
+    apiData = response
   } catch (err) {
     return {
       statusCode: err.statusCode || 500,
@@ -17,6 +19,6 @@ exports.handler = async function () {
   }
   return {
     statusCode: 200,
-    body: JSON.stringify({ response }),
+    body: JSON.stringify({ apiData }),
   }
 }

@@ -39,4 +39,22 @@ input {
   max-width: 90%;
   background: aqua;
   height: 600px;
+  display: flex;
+  flex-direction: column;
+  .form-container {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+  }
+  .weather {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.description {
+  text-transform: capitalize;
 }

@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="form-contianer">
+      <div class="form-container">
         <form id="searchWeatherForm" autocomplete="off">
           <label for="search">Enter City</label>
           <input type="text" placeholder="Enter city" id="search" required />
@@ -17,8 +17,14 @@
         </form>
       </div>
       <div class="weather">
-        <div class="city"></div>
-        <div class="temp"></div>
+        <p class="city">-</p>
+        <p class="temp">-</p>
+        <p class="description">-</p>
+        <img
+          src="http://openweathermap.org/img/wn/02d.png"
+          alt="icon"
+          class="icon"
+        />
       </div>
     </div>
     <script src="./scripts/app.js"></script>

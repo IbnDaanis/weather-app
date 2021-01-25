@@ -4,8 +4,8 @@
 
 ### Features of this App:
 
-- 
+-
 
 ## Preview:
 
-![Preview](./images/preview.png)
+![Preview](./src/images/preview.png)

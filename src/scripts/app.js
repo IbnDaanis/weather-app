@@ -1,5 +1,4 @@
 const getDataFromAPI = async searchQuery => {
-  console.log(process.env.API_URL)
   try {
     const apiURL =
       process.env.PRODUCTION === 'true'

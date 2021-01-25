@@ -5,7 +5,7 @@ exports.handler = async function (event, context, callback) {
   let apiData
   try {
     const data = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${event.queryStringParameters.searchQuery}&appid=${process.env.API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${event.queryStringParameters.search}&appid=${process.env.API_KEY}`
     )
     const response = await data.json()
     apiData = response

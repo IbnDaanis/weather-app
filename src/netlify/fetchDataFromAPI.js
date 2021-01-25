@@ -1,5 +1,4 @@
-const fetch = require('node-fetch')
-require('dotenv').config()
+import fetch from 'node-fetch'
 import { searchQuery } from '../scripts/app'
 const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${process.env.API_KEY}`
 

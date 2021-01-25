@@ -1,0 +1,26 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "**Check out** the game [here](https://ibndaanis.github.io/weather-app/)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx parcel src/index.html -p 3000",
+    "build": "parcel build src/index.html --public-url ./",
+    "push-gh-pages": "push-dir --dir=dist --branch=gh-pages --cleanup --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IbnDaanis/weather-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IbnDaanis/weather-app/issues"
+  },
+  "homepage": "https://github.com/IbnDaanis/weather-app#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.32.4"
+  }
+}

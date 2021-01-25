@@ -7,7 +7,7 @@ const getDataFromAPI = async () => {
     const apiURL =
       process.env.PRODUCTION === 'true'
         ? process.env.PRODUCTION_API
-        : process.env.DEVELOPMENT_API
+        : process.env.API_URL
     const fetchData = await fetch(apiURL)
     const response = await fetchData.json()
 

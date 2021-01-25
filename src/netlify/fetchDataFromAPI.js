@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 require('dotenv').config()
 
-const API_ENDPOINT = process.env.PRODUCTION_API
+const API_ENDPOINT = process.env.API_URL
 
 exports.handler = async function () {
   let response

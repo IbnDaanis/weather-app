@@ -1,9 +1,10 @@
-const getDataFromAPI = async () => {
+const getDataFromAPI = async searchQuery => {
+  console.log(process.env.API_URL)
   try {
     const apiURL =
       process.env.PRODUCTION === 'true'
         ? process.env.PRODUCTION_API
-        : process.env.API_URL
+        : `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${process.env.API_KEY}`
     const fetchData = await fetch(apiURL)
     const response = await fetchData.json()
 
@@ -12,5 +13,5 @@ const getDataFromAPI = async () => {
     console.error(error)
   }
 }
-
-getDataFromAPI()
+export const searchQuery = 'New York'
+getDataFromAPI(searchQuery)

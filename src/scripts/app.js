@@ -8,6 +8,8 @@ const dataToDOM = data => {
   const celsius = document.querySelector('#celsius')
   const fahrenheit = document.querySelector('#fahrenheit')
   const icon = document.querySelector('.icon')
+
+  weatherEl.classList.add('unhide')
   icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
   icon.alt = data.weather[0].description
   cityEl.textContent = `${data.name}, ${data.sys.country}`
@@ -28,6 +30,7 @@ const dataToDOM = data => {
 
 const getDataFromAPI = async searchQuery => {
   try {
+    document.querySelector('.weather').classList.remove('unhide')
     const apiURL =
       process.env.PRODUCTION === 'true'
         ? `/.netlify/functions/fetchDataFromAPI?search=${searchQuery}`

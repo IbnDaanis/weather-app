@@ -12,5 +12,5 @@ const getDataFromAPI = async searchQuery => {
     console.error(error)
   }
 }
-export const searchQuery = 'New York'
+const searchQuery = 'New York'
 getDataFromAPI(searchQuery)

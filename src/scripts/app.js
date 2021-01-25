@@ -9,6 +9,7 @@ const dataToDOM = data => {
   const fahrenheit = document.querySelector('#fahrenheit')
   const icon = document.querySelector('.icon')
 
+  document.querySelector('.loader').classList.remove('unhide')
   weatherEl.classList.add('unhide')
   icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
   icon.alt = data.weather[0].description
@@ -30,6 +31,7 @@ const dataToDOM = data => {
 
 const getDataFromAPI = async searchQuery => {
   try {
+    document.querySelector('.loader').classList.add('unhide')
     document.querySelector('.weather').classList.remove('unhide')
     const apiURL =
       process.env.PRODUCTION === 'true'

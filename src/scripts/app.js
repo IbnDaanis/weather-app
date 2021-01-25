@@ -1,5 +1,27 @@
 import '../styles/styles.scss'
 
+const dataToDOM = data => {
+  const weatherEl = document.querySelector('.weather')
+  const cityEl = document.querySelector('.city')
+  const tempEl = document.querySelector('.temp')
+  const descriptionEl = document.querySelector('.description')
+  const celsius = document.querySelector('#celsius')
+  const fahrenheit = document.querySelector('#fahrenheit')
+  const icon = document.querySelector('.icon')
+  icon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+  icon.alt = data.weather[0].description
+  cityEl.textContent = `${data.name}, ${data.sys.country}`
+  tempEl.textContent = `${Math.round(data.main.temp)}°C`
+  descriptionEl.textContent = data.weather[0].description
+
+  celsius.onclick = () => {
+    tempEl.textContent = `${Math.round(data.main.temp)}°C`
+  }
+  fahrenheit.onclick = () => {
+    tempEl.textContent = `${Math.round((data.main.temp * 9) / 5 + 32)}°F`
+  }
+}
+
 const getDataFromAPI = async searchQuery => {
   try {
     const apiURL =
@@ -8,20 +30,15 @@ const getDataFromAPI = async searchQuery => {
         : `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&units=metric&appid=${process.env.API_KEY}`
     const fetchData = await fetch(apiURL)
     const response = await fetchData.json()
-
-    console.log(response)
-    const weatherEl = document.querySelector('.weather')
-    const cityEl = document.querySelector('.city')
-    const tempEl = document.querySelector('.temp')
-    const descriptionEl = document.querySelector('.description')
-    const icon = document.querySelector('.icon')
-    icon.src = `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
-    icon.alt = response.weather[0].description
-    cityEl.textContent = `${response.name}, ${response.sys.country}`
-    tempEl.textContent = `${Math.round(response.main.temp)}°C`
-    descriptionEl.textContent = response.weather[0].description
+    dataToDOM(response)
   } catch (error) {
     console.error(error)
+    const errorMessage = document.querySelector('.error-message')
+    errorMessage.textContent = 'The city you searched for cannot be found'
+    errorMessage.classList.add('unhide')
+    setTimeout(() => {
+      errorMessage.classList.remove('unhide')
+    }, 5000)
   }
 }
 const searchWeatherForm = document.querySelector('#searchWeatherForm')

@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="./images/favicon.png" />
   </head>
   <body>
+    <div class="error-message noselect"></div>
     <div class="container">
       <div class="form-container">
         <form id="searchWeatherForm" autocomplete="off">
@@ -19,12 +20,14 @@
       <div class="weather">
         <p class="city">-</p>
         <p class="temp">-</p>
-        <p class="description">-</p>
         <img
           src="https://openweathermap.org/img/wn/02d.png"
           alt="icon"
           class="icon"
         />
+        <p class="description">-</p>
+        <button id="celsius">Celsius</button>
+        <button id="fahrenheit">Fahrenheit</button>
       </div>
     </div>
     <script src="./scripts/app.js"></script>

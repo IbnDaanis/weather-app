@@ -9,8 +9,17 @@
   </head>
   <body>
     <div class="container">
-      <label for="search">Enter City</label>
-      <input type="text" placeholder="Enter city" id="search" />
+      <div class="form-contianer">
+        <form id="searchWeatherForm" autocomplete="off">
+          <label for="search">Enter City</label>
+          <input type="text" placeholder="Enter city" id="search" required />
+          <button type="submit">Search Weather</button>
+        </form>
+      </div>
+      <div class="weather">
+        <div class="city"></div>
+        <div class="temp"></div>
+      </div>
     </div>
     <script src="./scripts/app.js"></script>
   </body>

@@ -15,7 +15,7 @@ const getDataFromAPI = async searchQuery => {
     const tempEl = document.querySelector('.temp')
     const descriptionEl = document.querySelector('.description')
     const icon = document.querySelector('.icon')
-    icon.src = `http://openweathermap.org/img/wn/${response.weather[0].icon}.png`
+    icon.src = `https://openweathermap.org/img/wn/${response.weather[0].icon}.png`
     icon.alt = response.weather[0].description
     cityEl.textContent = `${response.name}, ${response.sys.country}`
     tempEl.textContent = `${Math.round(response.main.temp)}°C`

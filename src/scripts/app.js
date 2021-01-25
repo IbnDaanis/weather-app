@@ -15,9 +15,13 @@ const dataToDOM = data => {
   descriptionEl.textContent = data.weather[0].description
 
   celsius.onclick = () => {
+    fahrenheit.classList.remove('active')
+    celsius.classList.add('active')
     tempEl.textContent = `${Math.round(data.main.temp)}°C`
   }
   fahrenheit.onclick = () => {
+    celsius.classList.remove('active')
+    fahrenheit.classList.add('active')
     tempEl.textContent = `${Math.round((data.main.temp * 9) / 5 + 32)}°F`
   }
 }

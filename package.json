@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/IbnDaanis/weather-app.git"
   },
+  "browserslist": [
+    "since 2017-06"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",

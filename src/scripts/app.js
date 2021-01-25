@@ -56,5 +56,6 @@ const searchInput = searchWeatherForm.querySelector('input')
 searchWeatherForm.onsubmit = e => {
   e.preventDefault()
   getDataFromAPI(searchInput.value)
+  document.activeElement.blur()
   searchInput.value = ''
 }

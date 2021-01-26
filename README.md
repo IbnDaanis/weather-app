@@ -1,6 +1,6 @@
 # Weather App
 
-**Check out** the game [here](https://ibndaanis.github.io/weather-app/)
+**Check out** the game [here](https://weather-forecast-25-jan.netlify.app/)
 
 ### Features of this App:
 

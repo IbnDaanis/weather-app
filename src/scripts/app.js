@@ -29,14 +29,13 @@ const {
 } = domNodes
 
 const dataToDOM = data => {
-  loaderEl.classList.remove('unhide')
   weatherEl.classList.add('unhide')
   iconEl.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
   iconEl.alt = data.weather[0].description
   cityEl.textContent = `${data.name}, ${data.sys.country}`
   tempEl.textContent = `${Math.round(data.main.temp)}°C`
   descriptionEl.textContent = data.weather[0].description
-
+  loaderEl.classList.remove('unhide')
   celsiusEl.onclick = () => {
     fahrenheitEl.classList.remove('active')
     celsiusEl.classList.add('active')
@@ -64,6 +63,7 @@ const getDataFromAPI = async searchQuery => {
   } catch (error) {
     console.error(error)
     weatherEl.classList.remove('unhide')
+    loaderEl.classList.remove('unhide')
     errorMessageEl.textContent = 'The city you searched for cannot be found'
     errorMessageEl.classList.add('unhide')
     setTimeout(() => {
